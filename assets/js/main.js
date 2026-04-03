@@ -241,6 +241,12 @@
     if (!form) return;
 
     const successMsg = document.getElementById('form-success');
+    const errorMsg = document.getElementById('form-error');
+    const errorText = document.getElementById('form-error-text');
+    const submitBtn = form.querySelector('button[type="submit"]');
+
+    const emailjsServiceId = 'service_fxz2iuv'; // replace with your EmailJS service ID
+    const emailjsTemplateId = 'template_sfvkftb'; // replace with your EmailJS template ID
 
     function validateEmail(email) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -255,46 +261,94 @@
       input.classList.toggle('error', hasError);
     }
 
+    function showStatus(type, message) {
+      if (type === 'success') {
+        if (successMsg) successMsg.classList.remove('hidden');
+        if (errorMsg) errorMsg.classList.add('hidden');
+      } else {
+        if (errorMsg) errorMsg.classList.remove('hidden');
+        if (successMsg) successMsg.classList.add('hidden');
+        if (errorText) errorText.textContent = message;
+      }
+    }
+
+    function setSubmitState(isSending) {
+      if (!submitBtn) return;
+      submitBtn.disabled = isSending;
+      submitBtn.innerHTML = isSending
+        ? '<i class="fa-solid fa-spinner fa-spin"></i> Sending...'
+        : '<i class="fa-solid fa-paper-plane"></i> Send Message';
+    }
+
     form.addEventListener('submit', e => {
       e.preventDefault();
-      if (successMsg) successMsg.classList.add('hidden');
+      showStatus('idle', '');
 
-      const name    = document.getElementById('name');
-      const email   = document.getElementById('email');
-      const phone   = document.getElementById('phone');
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const phone = document.getElementById('phone');
+      const projectType = document.getElementById('project-type');
       const message = document.getElementById('message');
 
-      const nameOk    = name && name.value.trim().length >= 2;
-      const emailOk   = email && validateEmail(email.value.trim());
-      const phoneOk   = phone && phone.value.trim().length >= 7;
+      const nameOk = name && name.value.trim().length >= 2;
+      const emailOk = email && validateEmail(email.value.trim());
+      const phoneOk = phone && phone.value.trim().length >= 7;
       const messageOk = message && message.value.trim().length >= 10;
 
-      if (name) setFieldError(name,    !nameOk);
-      if (email) setFieldError(email,   !emailOk);
-      if (phone) setFieldError(phone,   !phoneOk);
+      if (name) setFieldError(name, !nameOk);
+      if (email) setFieldError(email, !emailOk);
+      if (phone) setFieldError(phone, !phoneOk);
       if (message) setFieldError(message, !messageOk);
 
-      showError('err-name',    !nameOk);
-      showError('err-email',   !emailOk);
-      showError('err-phone',   !phoneOk);
+      showError('err-name', !nameOk);
+      showError('err-email', !emailOk);
+      showError('err-phone', !phoneOk);
       showError('err-message', !messageOk);
 
-      if (nameOk && emailOk && phoneOk && messageOk) {
-        form.reset();
-        if (successMsg) {
-          successMsg.classList.remove('hidden');
-          successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
+      if (!nameOk || !emailOk || !phoneOk || !messageOk) {
+        return;
       }
+
+      const templateParams = {
+        from_name: name.value.trim(),
+        from_email: email.value.trim(),
+        phone: phone.value.trim(),
+        project_type: projectType ? projectType.value : '',
+        message: message.value.trim(),
+      };
+
+      if (typeof emailjs === 'undefined' || !emailjs.send) {
+        showStatus('error', 'Email service is unavailable. Please try again later.');
+        return;
+      }
+
+      setSubmitState(true);
+
+      emailjs.send(emailjsServiceId, emailjsTemplateId, templateParams)
+        .then(() => {
+          form.reset();
+          showStatus('success', '');
+          if (successMsg) {
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        })
+        .catch(error => {
+          console.error('EmailJS error:', error);
+          showStatus('error', 'Unable to send message. Please try again or contact us directly.');
+        })
+        .finally(() => {
+          setSubmitState(false);
+        });
     });
 
     // Clear errors on input
-    ['name','email','phone','message'].forEach(id => {
+    ['name', 'email', 'phone', 'message'].forEach(id => {
       const input = document.getElementById(id);
       if (input) {
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
           this.classList.remove('error');
           showError('err-' + id, false);
+          if (errorMsg) errorMsg.classList.add('hidden');
         });
       }
     });

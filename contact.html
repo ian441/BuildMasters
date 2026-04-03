@@ -12,6 +12,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+  <script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "qDhVNMNJZQe2UgFVu",
+      });
+   })();
+ </script>
   <script>
     tailwind.config = {
       theme: {
@@ -95,7 +105,7 @@
             <textarea id="message" name="message" rows="5" class="form-input resize-none" placeholder="Tell us about your project…" aria-required="true"></textarea>
             <p class="form-error" id="err-message">Please enter your message.</p>
           </div>
-          <button type="submit" class="btn-primary w-full justify-center text-base">
+          <button type="submit" class="btn-primary w-full justify-center text-base" onclick="sendMail()">
             <i class="fa-solid fa-paper-plane"></i> Send Message
           </button>
 
@@ -105,6 +115,14 @@
             <div>
               <p class="font-display font-700 uppercase tracking-wide text-sm">Message Sent!</p>
               <p class="font-body text-sm font-300">Thank you! We'll get back to you within one business day.</p>
+            </div>
+          </div>
+          <!-- Error message -->
+          <div id="form-error" class="hidden mt-5 bg-red-50 border border-red-200 text-red-700 px-5 py-4 flex items-center gap-3" role="alert" aria-live="assertive">
+            <i class="fa-solid fa-circle-exclamation text-red-500 text-xl"></i>
+            <div>
+              <p class="font-display font-700 uppercase tracking-wide text-sm">Submission Failed</p>
+              <p id="form-error-text" class="font-body text-sm font-300">Something went wrong while sending. Please try again or email us directly.</p>
             </div>
           </div>
         </form>
