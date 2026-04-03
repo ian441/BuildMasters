@@ -594,15 +594,15 @@ footer a:hover {
 }
 
 .page-hero.page-hero--image.page-hero--about::before {
-  background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80');
+  background-image: url('https://img.freepik.com/free-photo/construction-silhouette_1150-8336.jpg?semt=ais_hybrid&w=740&q=80');
 }
 
 .page-hero.page-hero--image.page-hero--services::before {
-  background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80');
+  background-image: url('https://img.freepik.com/free-photo/monochrome-scene-depicting-life-workers-construction-industry-site_23-2151333267.jpg?semt=ais_hybrid&w=740&q=80');
 }
 
 .page-hero.page-hero--image.page-hero--projects::before {
-  background-image: url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1920&q=80');
+  background-image: url('https://cpe.ucdavis.edu/sites/g/files/dgvnsk15476/files/styles/sf_hero_banner_large/public/media/images/const-hero.jpg?h=bf654dbc&itok=1iECOUHR');
 }
 
 .page-hero.page-hero--image::after {
