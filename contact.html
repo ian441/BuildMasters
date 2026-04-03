@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact BuildMaster Construction - Get in touch for quotes, inquiries, and project discussions." />
+  <meta property="og:title" content="Contact BuildMaster Construction" />
+  <meta property="og:description" content="Reach out to our team for construction services and project inquiries." />
+  <title>Contact BuildMaster – Let's Build Together</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#1e2a3a',
+              amber: '#f59e0b',
+              orange: '#d97706',
+              light: '#f3f4f6',
+            }
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            body: ['Barlow', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div id="navbar-placeholder"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <h1>Get in Touch</h1>
+    <p>Have a project in mind? We'd love to hear from you.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label mx-auto" style="justify-content:center">Contact Us</div>
+      <h2 class="section-heading">Start Your Project Today</h2>
+      <p class="font-body font-300 text-gray-500 max-w-xl mx-auto mt-4 leading-relaxed">
+        Fill out the form below and our team will get back to you within one business day. No obligation, just a conversation about your vision.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-14">
+      <!-- Form -->
+      <div class="reveal-left">
+        <form id="contact-form" novalidate >
+          <div class="grid sm:grid-cols-2 gap-5 mb-5">
+            <div>
+              <label for="name" class="block font-display font-700 text-brand-dark text-sm uppercase tracking-wider mb-2">Full Name *</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="e.g. John Kamau" aria-required="true" />
+              <p class="form-error" id="err-name">Please enter your full name.</p>
+            </div>
+            <div>
+              <label for="email" class="block font-display font-700 text-brand-dark text-sm uppercase tracking-wider mb-2">Email *</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" aria-required="true" />
+              <p class="form-error" id="err-email">Please enter a valid email address.</p>
+            </div>
+          </div>
+          <div class="mb-5">
+            <label for="phone" class="block font-display font-700 text-brand-dark text-sm uppercase tracking-wider mb-2">Phone *</label>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+254 700 000 000" aria-required="true" />
+            <p class="form-error" id="err-phone">Please enter your phone number.</p>
+          </div>
+          <div class="mb-5">
+            <label for="project-type" class="block font-display font-700 text-brand-dark text-sm uppercase tracking-wider mb-2">Project Type</label>
+            <select id="project-type" name="project-type" class="form-input">
+              <option value="">Select a service...</option>
+              <option value="Residential">Residential Construction</option>
+              <option value="Commercial">Commercial Building</option>
+              <option value="Renovations">Renovations & Fitouts</option>
+              <option value="Management">Project Management</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block font-display font-700 text-brand-dark text-sm uppercase tracking-wider mb-2">Message *</label>
+            <textarea id="message" name="message" rows="5" class="form-input resize-none" placeholder="Tell us about your project…" aria-required="true"></textarea>
+            <p class="form-error" id="err-message">Please enter your message.</p>
+          </div>
+          <button type="submit" class="btn-primary w-full justify-center text-base">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+
+          <!-- Success message -->
+          <div id="form-success" class="hidden mt-5 bg-green-50 border border-green-200 text-green-700 px-5 py-4 flex items-center gap-3" role="alert" aria-live="polite">
+            <i class="fa-solid fa-circle-check text-green-500 text-xl"></i>
+            <div>
+              <p class="font-display font-700 uppercase tracking-wide text-sm">Message Sent!</p>
+              <p class="font-body text-sm font-300">Thank you! We'll get back to you within one business day.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Info + Map -->
+      <div class="reveal-right space-y-8">
+        <!-- Contact details -->
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 bg-brand-amber flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-location-dot text-brand-dark"></i>
+            </div>
+            <div>
+              <p class="font-display font-700 text-brand-dark uppercase tracking-wide text-sm mb-1">Address</p>
+              <p class="font-body font-300 text-gray-500 text-sm">12 Construction Avenue, Westlands<br>Nairobi, Kenya</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 bg-brand-amber flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-phone text-brand-dark"></i>
+            </div>
+            <div>
+              <p class="font-display font-700 text-brand-dark uppercase tracking-wide text-sm mb-1">Phone</p>
+              <p class="font-body font-300 text-gray-500 text-sm"><a href="tel:+254700123456" class="hover:text-brand-amber">+254 700 123 456</a></p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 bg-brand-amber flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-envelope text-brand-dark"></i>
+            </div>
+            <div>
+              <p class="font-display font-700 text-brand-dark uppercase tracking-wide text-sm mb-1">Email</p>
+              <p class="font-body font-300 text-gray-500 text-sm"><a href="mailto:info@buildmaster.co.ke" class="hover:text-brand-amber">info@buildmaster.co.ke</a></p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 bg-brand-amber flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-clock text-brand-dark"></i>
+            </div>
+            <div>
+              <p class="font-display font-700 text-brand-dark uppercase tracking-wide text-sm mb-1">Office Hours</p>
+              <p class="font-body font-300 text-gray-500 text-sm">Mon–Fri:<br>8:00 AM – 5:00 PM<br><br>Sat:<br>9:00 AM – 1:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download Brochure -->
+        <div class="border-t border-gray-100 pt-6">
+          <p class="font-display font-700 text-brand-dark uppercase tracking-wide text-sm mb-3">Resources</p>
+          <a href="#" class="inline-flex items-center gap-2 font-body font-500 text-brand-amber hover:text-brand-orange transition-colors">
+            <i class="fa-solid fa-file-pdf"></i> Download Company Brochure (2.4 MB)
+          </a>
+        </div>
+
+        <!-- Map -->
+        <div class="overflow-hidden shadow-lg" style="height:280px">
+          <iframe
+            title="BuildMaster Office Location – Westlands, Nairobi"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.784568614842!2d36.80116461475401!3d-1.2676849990615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f173d4a0f5e9d%3A0x5a1e5e3f2f3a3d3e!2sWestlands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1683000000000!5m2!1sen!2ske"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US TIMELINE -->
+<section class="py-24 bg-brand-light">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center mb-16 reveal">
+      <div class="section-label mx-auto" style="justify-content:center">Our Process</div>
+      <h2 class="section-heading">How We Work Together</h2>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="text-center reveal" style="transition-delay:0.05s">
+        <div class="w-16 h-16 rounded-full bg-brand-amber text-brand-dark font-display font-800 text-2xl flex items-center justify-center mx-auto mb-4">1</div>
+        <h3 class="font-display font-700 text-brand-dark uppercase tracking-wide mb-2">Initial Consultation</h3>
+        <p class="font-body font-300 text-gray-600 text-sm">We meet to understand your vision, requirements, budget, and timeline.</p>
+      </div>
+
+      <div class="text-center reveal" style="transition-delay:0.15s">
+        <div class="w-16 h-16 rounded-full bg-brand-amber text-brand-dark font-display font-800 text-2xl flex items-center justify-center mx-auto mb-4">2</div>
+        <h3 class="font-display font-700 text-brand-dark uppercase tracking-wide mb-2">Proposal & Design</h3>
+        <p class="font-body font-300 text-gray-600 text-sm">We prepare a detailed proposal with scope, timeline, and cost breakdown.</p>
+      </div>
+
+      <div class="text-center reveal" style="transition-delay:0.25s">
+        <div class="w-16 h-16 rounded-full bg-brand-amber text-brand-dark font-display font-800 text-2xl flex items-center justify-center mx-auto mb-4">3</div>
+        <h3 class="font-display font-700 text-brand-dark uppercase tracking-wide mb-2">Construction & Updates</h3>
+        <p class="font-body font-300 text-gray-600 text-sm">We execute the project with regular updates, transparency, and quality control.</p>
+      </div>
+
+      <div class="text-center reveal" style="transition-delay:0.35s">
+        <div class="w-16 h-16 rounded-full bg-brand-amber text-brand-dark font-display font-800 text-2xl flex items-center justify-center mx-auto mb-4">4</div>
+        <h3 class="font-display font-700 text-brand-dark uppercase tracking-wide mb-2">Handover & Support</h3>
+        <p class="font-body font-300 text-gray-600 text-sm">Final inspection, handover, and ongoing support for any warranty issues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-5 lg:px-8">
+    <div class="text-center mb-16 reveal">
+      <h2 class="section-heading">Frequently Asked Questions</h2>
+    </div>
+
+    <div class="space-y-4 reveal">
+      <details class="border border-gray-200 p-5 rounded hover:border-brand-amber transition-colors cursor-pointer">
+        <summary class="font-display font-700 text-brand-dark text-lg uppercase tracking-wide flex items-center justify-between">
+          How long does the construction process typically take?
+          <i class="fa-solid fa-chevron-down text-brand-amber"></i>
+        </summary>
+        <p class="font-body font-300 text-gray-600 mt-3">
+          Timeline varies by project scope. A residential home typically takes 6-18 months, while commercial projects may span 12-36 months. We provide detailed project schedules during the proposal phase.
+        </p>
+      </details>
+
+      <details class="border border-gray-200 p-5 rounded hover:border-brand-amber transition-colors cursor-pointer">
+        <summary class="font-display font-700 text-brand-dark text-lg uppercase tracking-wide flex items-center justify-between">
+          What payment terms do you offer?
+          <i class="fa-solid fa-chevron-down text-brand-amber"></i>
+        </summary>
+        <p class="font-body font-300 text-gray-600 mt-3">
+          We offer flexible payment schedules tied to project milestones. Typical terms are 30% upfront, 40% on start work, and 30% on completion. Custom arrangements can be negotiated.
+        </p>
+      </details>
+
+      <details class="border border-gray-200 p-5 rounded hover:border-brand-amber transition-colors cursor-pointer">
+        <summary class="font-display font-700 text-brand-dark text-lg uppercase tracking-wide flex items-center justify-between">
+          Do you offer warranty on completed projects?
+          <i class="fa-solid fa-chevron-down text-brand-amber"></i>
+        </summary>
+        <p class="font-body font-300 text-gray-600 mt-3">
+          Yes. We provide a 2-year defect warranty on all structural and MEP works, and 5-year on major building systems. Extended warranties available upon request.
+        </p>
+      </details>
+
+      <details class="border border-gray-200 p-5 rounded hover:border-brand-amber transition-colors cursor-pointer">
+        <summary class="font-display font-700 text-brand-dark text-lg uppercase tracking-wide flex items-center justify-between">
+          Can you work within tight budgets and timelines?
+          <i class="fa-solid fa-chevron-down text-brand-amber"></i>
+        </summary>
+        <p class="font-body font-300 text-gray-600 mt-3">
+          Absolutely. Our experience managing multiple projects allows us to optimize resources and timelines. We'll work with you to establish realistic targets and manage expectations from day one.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="footer-placeholder"></div>
+
+<!-- SCRIPTS -->
+<script src="/assets/js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const headerRes = await fetch('/components/header.html');
+      const headerHtml = await headerRes.text();
+      document.getElementById('navbar-placeholder').innerHTML = headerHtml;
+      
+      const footerRes = await fetch('/components/footer.html');
+      const footerHtml = await footerRes.text();
+      document.getElementById('footer-placeholder').innerHTML = footerHtml;
+      
+      // Initialize app after components are loaded
+      if (typeof initializeApp === 'function') {
+        initializeApp();
+      }
+    } catch (error) {
+      console.warn('Could not load header/footer components', error);
+    }
+  });
+</script>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/254700123456?text=Hello%20BuildMaster,%20I%20would%20like%20to%20inquire%20about%20your%20construction%20services." 
+   class="whatsapp-float" 
+   target="_blank" 
+   aria-label="Chat with us on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</body>
+</html>

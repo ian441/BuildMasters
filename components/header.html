@@ -1,0 +1,40 @@
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent" role="navigation" aria-label="Main navigation">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex items-center justify-between h-18 py-4">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group" aria-label="BuildMaster Home">
+        <div class="w-9 h-9 bg-brand-amber flex items-center justify-center" style="clip-path:polygon(0 0,calc(100% - 8px) 0,100% 100%,8px 100%)">
+          <i class="fa-solid fa-helmet-safety text-brand-dark text-sm"></i>
+        </div>
+        <span class="font-display font-900 text-2xl text-white tracking-wide leading-none">BUILD<span class="text-brand-amber">MASTER</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="nav-link text-white/90 hover:text-white font-body font-500 text-sm tracking-wide transition-colors" aria-label="Home">Home</a>
+        <a href="/about.html" class="nav-link text-white/90 hover:text-white font-body font-500 text-sm tracking-wide transition-colors" aria-label="About">About</a>
+        <a href="/projects.html" class="nav-link text-white/90 hover:text-white font-body font-500 text-sm tracking-wide transition-colors" aria-label="Projects">Projects</a>
+        <a href="/services.html" class="nav-link text-white/90 hover:text-white font-body font-500 text-sm tracking-wide transition-colors" aria-label="Services">Services</a>
+        <a href="/contact.html" class="nav-link text-white/90 hover:text-white font-body font-500 text-sm tracking-wide transition-colors" aria-label="Contact">Contact</a>
+        <a href="/blogs.html" class="btn-primary text-sm py-2.5 px-6">Blog</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button id="hamburger" class="md:hidden text-white focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <i id="hamburger-icon" class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" role="menu" aria-label="Mobile navigation">
+    <div class="bg-brand-dark px-5 pb-5 flex flex-col gap-1">
+      <a href="/" class="nav-link mobile-link text-white/90 py-3 font-body font-500 border-b border-white/10" role="menuitem">Home</a>
+      <a href="/about.html" class="nav-link mobile-link text-white/90 py-3 font-body font-500 border-b border-white/10" role="menuitem">About</a>
+      <a href="/projects.html" class="nav-link mobile-link text-white/90 py-3 font-body font-500 border-b border-white/10" role="menuitem">Projects</a>
+      <a href="/services.html" class="nav-link mobile-link text-white/90 py-3 font-body font-500 border-b border-white/10" role="menuitem">Services</a>
+      <a href="/contact.html" class="nav-link mobile-link text-white/90 py-3 font-body font-500" role="menuitem">Contact</a>
+      <a href="/blogs.html" class="btn-primary mt-3 self-start">Blog</a>
+    </div>
+  </div>
+</nav>
