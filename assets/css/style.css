@@ -564,9 +564,19 @@ footer a:hover {
 /* ── PAGE HERO SECTIONS ── */
 .page-hero {
   position: relative;
-  padding: 80px 20px 60px;
+  min-height: 50vh;
+  padding: 100px 20px 80px;
   background: #1e2a3a;
   color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 45vh;
+    padding: 80px 20px 70px;
+  }
 }
 
 .page-hero h1 {
@@ -582,6 +592,15 @@ footer a:hover {
   min-height: 70vh;
   padding: 120px 20px 70px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .page-hero.page-hero--image {
+    min-height: 55vh;
+    padding: 100px 20px 80px;
+  }
 }
 
 .page-hero.page-hero--image::before {
